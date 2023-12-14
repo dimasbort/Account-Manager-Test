@@ -1,0 +1,9 @@
+div {
+	display: grid;
+}
+
+lightning-record-view-form {
+	justify-self: center;
+	align-self: center;
+    min-width: 350px;
+}

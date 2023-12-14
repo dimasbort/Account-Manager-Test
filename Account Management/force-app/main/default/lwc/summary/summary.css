@@ -1,0 +1,15 @@
+section {
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+c-contact-tile {
+    min-width: 300px;
+    flex: 1;
+}

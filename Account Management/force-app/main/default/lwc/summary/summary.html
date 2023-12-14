@@ -1,0 +1,31 @@
+<template>
+    <lightning-card icon-name={icon} title="Summary" class="slds-m-top_medium slds-m-bottom_x-large">
+        <lightning-spinner lwc:if={isSpinner}></lightning-spinner>
+        <template lwc:if={objectApiName}>
+            <template lwc:if={accountType}>
+                <div class="slds-m-left_x-small">
+                    <section>Account Info</section>
+                    <c-account-tile account-id={mainId}></c-account-tile>
+                </div>
+                <section if:true={relatedContacts} class="slds-m-left_x-small">Contact Info</section>
+                <div class="content">
+                    <template for:each={relatedContacts} for:item="contact">
+                        <c-contact-tile 
+                            key={contact.id} 
+                            contact-id={contact.id}
+                            class="slds-var-m-around_x-small"></c-contact-tile>
+                    </template>
+                </div>
+            </template>
+            <template lwc:else>
+                <div class="slds-m-left_x-small">
+                    <section>Contact Info</section>
+                    <c-contact-tile contact-id={mainId}></c-contact-tile>
+                </div>
+            </template>
+        </template>
+        <template lwc:else>
+            <c-placeholder message="Select a product to see details"></c-placeholder>
+        </template> 
+    </lightning-card>
+</template>

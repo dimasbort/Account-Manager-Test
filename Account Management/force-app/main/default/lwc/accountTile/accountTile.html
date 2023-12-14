@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-var-m-around_x-small slds-box slds-box_xx-small">
+        <lightning-record-view-form
+            record-id={accountId}
+            object-api-name="Account"
+            density="compact"
+        >
+            <lightning-output-field         
+                field-name={nameField}
+            ></lightning-output-field>
+            <lightning-output-field                
+                field-name={typeField}
+            ></lightning-output-field>
+            <lightning-output-field         
+                field-name={phoneField}
+            ></lightning-output-field>
+            <lightning-output-field          
+                field-name={websiteField}
+            ></lightning-output-field>
+        </lightning-record-view-form>
+    </div>
+</template>
