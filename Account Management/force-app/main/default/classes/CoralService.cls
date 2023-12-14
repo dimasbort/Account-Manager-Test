@@ -35,6 +35,9 @@ global with sharing class CoralService {
                 when 'create' {
                     return getCreateOperation(requestData, actionName);
                 } 
+                when else {
+                    throw new ActionException();
+                }
             }
         } catch (Exception e) {
             result.put(RESPONSE_STATUS_KEY, RESPONSE_STATUS_ERROR);
@@ -118,5 +121,8 @@ global with sharing class CoralService {
     }
 
     public class CreateException extends Exception {
+    }
+
+    public class ActionException extends Exception {
     }
 }
